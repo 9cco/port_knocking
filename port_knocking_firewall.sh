@@ -43,6 +43,8 @@ iptables -A INPUT -i lo -j ACCEPT
 
 # Uncomment to allow tcp connections on port 80
 #iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+# Uncomment to allow udp connection on port 51820 for wireguard
+#iptables -A INPUT -p udp --dport 51820 -j ACCEPT
 
 # Finally in the INPUT chain we transfer control to the rules in the WALL chain.
 iptables -A INPUT -j WALL
