@@ -1,3 +1,12 @@
-- name: Shell Linter
-  uses: azohra/shell-linter@v0.6.0
+on: [push, pull_request, pull_request_target]
 
+name: Lint
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Run ShellCheck
+        uses: azohra/shell-linter@latest
